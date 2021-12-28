@@ -2,7 +2,6 @@ var p = document.querySelectorAll('p');
 var input = document.querySelector('input');
 var button = document.querySelectorAll('button');
 var score = 0;
-
 function difficulty(a,b,c){
   d=Math.pow(10,(a-1));
   button[a].style.color='lightgreen';
@@ -16,6 +15,8 @@ function values() {
   a = p[0].innerText = Math.trunc(Math.random() * d);
 
   b = p[2].innerText = Math.trunc(Math.random() * d);
+  while(b == 0)
+    b = p[2].innerText = Math.trunc(Math.random() * d);
   operation = ['+', '-', '*', '/'];
   opindex = Math.trunc(Math.random() * 4);
   p[1].innerText = operation[opindex];
